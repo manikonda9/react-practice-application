@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
+import { connect } from "react-redux";
 import './App.css';
+import Appbar from "./components/appbar";
 
 class App extends Component {
   render() {
@@ -20,10 +22,17 @@ class App extends Component {
             Learn React
           </a>
         </header> */}
-        <h1>MMK Application</h1>
+        <Appbar />
+        <h1>{this.props.title}</h1>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state =>{
+  return{
+    title : state.title
+  }
+}
+
+export default connect(mapStateToProps)(App);
