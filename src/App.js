@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import './App.css';
 import Appbar from "./components/appbar";
+import Data from "./components/data";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
         </header> */}
         <Appbar />
         <h1>{this.props.title}</h1>
+        <Data />
       </div>
     );
   }
